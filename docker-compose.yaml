@@ -1,0 +1,36 @@
+services:
+  postgres:
+    image: postgres:latest
+    container_name: bancoDeDados
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      PGDATA: /data/postgres
+    volumes:
+      - postgres:/data/postgres
+      - ./sql:/docker-entrypoint-initdb.d
+
+    ports:
+      - "5432:5432"
+    networks:
+      - banco_net
+    restart: unless-stopped
+
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: root@root.com
+      PGADMIN_DEFAULT_PASSWORD: root
+    ports:
+      - "8081:80"
+    depends_on:
+      - postgres
+    networks:
+      - banco_net
+
+networks:
+  banco_net:
+    driver: bridge
+
+volumes:
+  postgres:
