@@ -7,7 +7,6 @@
       "typeorm": "typeorm-ts-node-commonjs",
       "start": "ts-node src/index.ts",
       "migration:generate": "ts-node ./node_modules/typeorm/cli.js migration:generate -d src/data-source.ts ./src/migration/default"
-
    },
    "keywords": [],
    "author": "",
@@ -22,6 +21,7 @@
    },
    "dependencies": {
       "cors": "^2.8.5",
+      "dor": "file:",
       "express": "^4.21.1",
       "pg": "^8.4.0",
       "reflect-metadata": "^0.1.13",

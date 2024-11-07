@@ -1,6 +1,4 @@
 import { Column, CreateDateColumn, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
-import { Prioridade } from "./enum/Prioridade";
-import { Status } from "./enum/Status";
 import { User } from "./User";
 
 @Entity()
