@@ -1,5 +1,4 @@
 import { Request, Response } from "express";
-import { User } from "src/entity/User";
 import { UserRepositoryType } from "src/repository/userRepository";
 
 export class UserController {
